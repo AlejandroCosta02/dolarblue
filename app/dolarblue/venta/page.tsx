@@ -1,4 +1,4 @@
-import Conversion from "@/app/components/Conversion";
+import Conversion_2 from "@/app/components/Conversion_2";
 import NavDolar from "@/app/components/NavDolar";
 
 const getDolar = async () => {
@@ -17,7 +17,7 @@ async function DB_Venta() {
     <>
       <p className="text-center text-5xl text-bold p-10">${dolarblue_venta}</p>
       <NavDolar />
-      <Conversion dolarblue={dolarblue_venta} />
+      <Conversion_2 dolarblue={dolarblue_venta} />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Ejemplo from "./components/Conversion_2";
 import "./globals.css";
 import { Raleway } from "next/font/google";
 const raleway = Raleway({

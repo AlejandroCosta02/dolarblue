@@ -1,4 +1,4 @@
-import Conversion from "@/app/components/Conversion";
+import Conversion_2 from "@/app/components/Conversion_2";
 import NavDolar from "@/app/components/NavDolar";
 
 const getDolar = async () => {
@@ -17,7 +17,7 @@ const DB_Promedio = async () => {
     <>
       <p className="text-center text-5xl text-bold p-10">${dolarblue_avg}</p>
       <NavDolar />
-      <Conversion dolarblue={dolarblue_avg} />
+      <Conversion_2 dolarblue={dolarblue_avg} />
     </>
   );
 };
