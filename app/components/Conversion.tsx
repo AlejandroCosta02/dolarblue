@@ -22,7 +22,7 @@ function Conversion({ dolarblue }: { dolarblue: number }) {
   const dolarToPeso = () => {
     setEffect(true);
     let x = Number(number1);
-    let result1 = (x / dolarblue).toFixed(2);
+    let result1 = (x * dolarblue).toFixed(2);
     result1 = result1.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     setResult1(result1);
   };
