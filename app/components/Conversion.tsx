@@ -4,8 +4,8 @@ import { FaEquals, FaArrowsAltV } from "react-icons/fa";
 import { US, AR } from "country-flag-icons/react/3x2";
 
 function Conversion({ dolarblue }: { dolarblue: number }) {
-  const [result, setResult] = useState(0);
-  const [result1, setResult1] = useState(0);
+  const [result, setResult] = useState<string>("");
+  const [result1, setResult1] = useState<string>("");
   const [effect, setEffect] = useState(false);
   const [effect1, setEffect1] = useState(false);
   const [changeLayout, setChangeLeyout] = useState(true);
@@ -14,14 +14,17 @@ function Conversion({ dolarblue }: { dolarblue: number }) {
 
   const pesoToDolar = () => {
     setEffect(true);
-    let x = number;
-    console.log(x);
+    let x = Number(number);
     let result = (x / dolarblue).toFixed(2);
-    // result = result.toFixed(2);
-    result = result
-      .toLocaleString("en-US", { useGrouping: true })
-      .replace(/,/g, " ");
+    result = result.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     setResult(result);
+  };
+  const dolarToPeso = () => {
+    setEffect(true);
+    let x = Number(number1);
+    let result1 = (x / dolarblue).toFixed(2);
+    result1 = result1.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    setResult1(result1);
   };
 
   const arrowButton = () => {
@@ -30,18 +33,7 @@ function Conversion({ dolarblue }: { dolarblue: number }) {
     setEffect1(!effect);
     setNumber("");
     setNumber1("");
-    setResult(0);
-  };
-  const dolarToPeso = () => {
-    setEffect(true);
-    setEffect1(true);
-    let x = number1;
-    let result1 = (x * dolarblue).toFixed(2);
-    // result = result.toFixed(2);
-    result1 = result1
-      .toLocaleString("en-US", { useGrouping: true })
-      .replace(/,/g, " ");
-    setResult1(result1);
+    setResult("");
   };
 
   return (
