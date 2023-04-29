@@ -86,6 +86,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
               className="w-3/4 py-3 px-4 pl-9 shadow-sm rounded-sm text-3xl font-bold border-b-4 outline-0 border-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
               id="value-input"
+              placeholder="0.00"
               value={value}
               onChange={handleValueChange_2}
             />
