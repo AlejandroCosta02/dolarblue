@@ -4,7 +4,7 @@ import { FaArrowsAltV } from "react-icons/fa";
 import { US, AR } from "country-flag-icons/react/3x2";
 
 function Conversion_2({ dolarblue }: { dolarblue: number }) {
-  const [value, setValue] = useState<number>();
+  const [value, setValue] = useState<number | undefined | null>();
   const [result, setResult] = useState<number>(0);
 
   const [effectButton, setEffectButton] = useState(false);
@@ -23,8 +23,8 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
   const arrowButton = () => {
     setChangeLeyout(!changeLayout);
     setEffectButton(!effectButton);
-    setValue(0);
     setResult(0);
+    setValue(null);
   };
   return (
     <>
@@ -37,7 +37,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
               type="number"
               id="value-input"
               placeholder="0.00"
-              value={value}
+              value={value ?? ""}
               onChange={handleValueChange_1}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">
@@ -87,7 +87,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
               type="number"
               id="value-input"
               placeholder="0.00"
-              value={value}
+              value={value ?? ""}
               onChange={handleValueChange_2}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">
