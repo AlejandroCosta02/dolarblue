@@ -3,16 +3,18 @@ import React from "react";
 
 interface NavbarProps {
   isOpen: boolean;
+  navRef?: React.RefObject<HTMLDivElement>;
 }
 
 const Navbar: React.ForwardRefExoticComponent<NavbarProps> = React.forwardRef(
-  ({ isOpen }, ref) => {
+  ({ isOpen, navRef, ...props }) => {
     return (
       <nav
-        ref={ref}
+        ref={navRef}
         className={`${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } fixed top-16 left-0 bg-gray-800 w-64 h-1/2 border-r border-gray-200 transform transition ease-in-out duration-300 z-20`}
+        {...props}
       >
         <ul className="p-4">
           <li className="py-2 border-b border-gray-200">
