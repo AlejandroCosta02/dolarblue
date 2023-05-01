@@ -54,9 +54,9 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
               onClick={arrowButton}
               className={`${
                 effectButton && "animate-wiggle"
-              } bg-black p-5  text-white rounded-full hover:bg-red-500 hover:text-black`}
+              } bg-black p-5 px-20 text-white rounded-md hover:bg-red-500 hover:text-black`}
             >
-              <FaArrowsAltV />
+              <FaArrowsAltV className="text-xl" />
             </button>
           </div>
           {/* RESULT */}
@@ -104,9 +104,9 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
               onClick={arrowButton}
               className={`${
                 effectButton && "animate-wiggle"
-              } bg-black p-5  text-white rounded-full hover:bg-red-500 hover:text-black`}
+              } bg-black p-5 px-20 text-white rounded-md hover:bg-red-500 hover:text-black`}
             >
-              <FaArrowsAltV />
+              <FaArrowsAltV className="text-xl" />
             </button>
           </div>
           {/* RESULT */}

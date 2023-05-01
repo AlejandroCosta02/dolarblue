@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Ejemplo from "./components/Conversion_2";
 import "./globals.css";
 import { Raleway } from "next/font/google";
+import IndexPage from "./components/sideNavBar/IndexPage";
 const raleway = Raleway({
   weight: ["100", "300", "400", "600", "700"],
   style: ["normal", "italic"],
@@ -32,8 +33,7 @@ export default function RootLayout({
         <h1 className="text-center text-6xl text-bold p-5">
           Ultima Cotización del dolar
         </h1>
-        <h3 className="text-center text-3xl text-bold">Dolar Blue</h3>
-
+        <IndexPage />
         {children}
         <Footer />
         <script
