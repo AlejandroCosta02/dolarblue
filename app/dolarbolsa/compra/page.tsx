@@ -13,8 +13,13 @@ async function BB_Compra() {
 
   return (
     <>
-      <h3 className="text-center text-3xl text-bold">{dolarBolsa_nombre}</h3>
-      <p className="text-center text-5xl text-bold p-10">
+      <div className="bg-gray-800 py-12">
+        <h3 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl text-center">
+          {dolarBolsa_nombre}
+        </h3>
+      </div>
+
+      <p className="text-center text-5xl text-bold my-11">
         ${dolarBolsa_compra}
       </p>
       <NavDolar href={path} href_1={path_1} />

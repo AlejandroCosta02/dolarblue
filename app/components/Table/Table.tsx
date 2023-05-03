@@ -77,9 +77,9 @@ const Table: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-2/4 pb-10">
+    <div className="py-12 lg:mx-96 md:mx-10">
       <div
-        className="grid grid-cols-3 gap-4 bg-white rounded-md overflow-hidden mt-8"
+        className="grid grid-cols-1 gap-4 bg-white rounded-md  mt-8 "
         style={{ gridTemplateColumns: "2fr 1fr 1fr" }}
       >
         <div className="bg-transparent p-2"></div>

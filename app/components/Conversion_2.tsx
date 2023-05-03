@@ -29,7 +29,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
   return (
     <>
       {changeLayout ? (
-        <main className="flex flex-col items-center justify-center w-3/4 h-full m-auto pb-10">
+        <main className="flex flex-col items-center justify-center  m-auto py-12">
           {/* USER INPUT */}
           <div className="relative">
             <input
@@ -60,7 +60,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
             </button>
           </div>
           {/* RESULT */}
-          <div className="relative mt-5">
+          <div className="relative">
             <input
               type="text"
               name="hs-input-with-leading-and-trailing-icon"
@@ -110,7 +110,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
             </button>
           </div>
           {/* RESULT */}
-          <div className="relative mt-5">
+          <div className="relative">
             <input
               type="text"
               name="hs-input-with-leading-and-trailing-icon"
