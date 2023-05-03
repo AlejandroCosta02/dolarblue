@@ -9,6 +9,12 @@ import {
   dolar_blue_compra,
   dolar_oficial_venta,
   dolar_blue_venta,
+  dolar_bolsa_nombre,
+  dolar_bolsa_compra,
+  dolar_bolsa_venta,
+  dolar_ccl_nombre,
+  dolar_ccl_compra,
+  dolar_ccl_venta,
 } from "../NewApi";
 import LoadingComponent from "../LoadingComponent";
 import Link from "next/link";
@@ -21,6 +27,12 @@ const Table: React.FC = () => {
   const [dolarOficialCompra, setDolarOficialCompra] = useState<string>("");
   const [dolarOficialVenta, setDolarOficialVenta] = useState<string>("");
   const [dolarBlueVenta, setDolarBlueVenta] = useState<string>("");
+  const [dolarBolsaNombre, setDolarBolsaNombre] = useState<string>("");
+  const [dolarBolsaCompra, setDolarBolsaCompra] = useState<string>("");
+  const [dolarBolsaVenta, setDolarBolsaVenta] = useState<string>("");
+  const [dolarCCLVenta, setDolarCCLVenta] = useState<string>("");
+  const [dolarCCLCompra, setDolarCCLCompra] = useState<string>("");
+  const [dolarCCLNombre, setDolarCCLNombre] = useState<string>("");
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,6 +53,12 @@ const Table: React.FC = () => {
       const blueCompra = await dolar_blue_compra();
       const oficialVenta = await dolar_oficial_venta();
       const blueVenta = await dolar_blue_venta();
+      const bolsaName = await dolar_bolsa_nombre();
+      const bolsaCompra = await dolar_bolsa_compra();
+      const bolsaVenta = await dolar_bolsa_venta();
+      const cclVenta = await dolar_ccl_venta();
+      const cclCompra = await dolar_ccl_compra();
+      const cclNombre = await dolar_ccl_nombre();
       setIsLoading(false);
       setDolarOficialNombre(oficialName);
       setDolarBlueNombre(blueName);
@@ -48,47 +66,71 @@ const Table: React.FC = () => {
       setDolarBlueCompra(blueCompra);
       setDolarOficialVenta(oficialVenta);
       setDolarBlueVenta(blueVenta);
+      setDolarBolsaNombre(bolsaName);
+      setDolarBolsaCompra(bolsaCompra);
+      setDolarBolsaVenta(bolsaVenta);
+      setDolarCCLVenta(cclVenta);
+      setDolarCCLCompra(cclCompra);
+      setDolarCCLNombre(cclNombre);
     }
     fetchDolarNames();
   }, []);
 
   return (
-    <div className="mx-auto w-2/4">
+    <div className="mx-auto w-2/4 pb-10">
       <div
-        className="grid grid-cols-3 gap-2 text-center"
+        className="grid grid-cols-3 gap-4 bg-white rounded-md overflow-hidden mt-8"
         style={{ gridTemplateColumns: "2fr 1fr 1fr" }}
       >
         <div className="bg-transparent p-2"></div>
-        <div className="bg-green-100 p-2 rounded-xl font-bold">Compra</div>
-        <div className="bg-red-100 p-2 rounded-xl font-bold">Venta</div>
-        <div className="bg-gray-200 p-2 hover:bg-black hover:text-white">
+        <div className="px-6 py-4 bg-green-200 text-gray-700 font-medium uppercase tracking-wider text-xs">
+          Compra
+        </div>
+        <div className="px-6 py-4 bg-red-200 text-gray-700 font-medium uppercase tracking-wider text-xs">
+          Venta
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-semibold tracking-tight text-sm hover:bg-gray-800 transition duration-300 ease-in-out hover:text-white">
           <Link href="/dolaroficial/compra">
             {isLoading ? <LoadingComponent /> : dolarOficialNombre}
           </Link>
         </div>
-        <div className="bg-gray-200 p-2">
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
           {isLoading ? <LoadingComponent /> : dolarOficialCompra}
         </div>
-        <div className="bg-gray-200 p-2 text-right">
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
           {isLoading ? <LoadingComponent /> : dolarOficialVenta}
         </div>
-        <div className="bg-gray-200 p-2 hover:bg-black hover:text-white">
+        <div className="px-6 py-4 bg-white text-gray-700 font-semibold tracking-tight text-sm hover:bg-gray-800 transition duration-300 ease-in-out hover:text-white">
           <Link href="/dolarblue/compra">
             {isLoading ? <LoadingComponent /> : dolarBlueNombre}
           </Link>
         </div>
-        <div className="bg-gray-200 p-2 text-right">
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
           {isLoading ? <LoadingComponent /> : dolarBlueCompra}
         </div>
-        <div className="bg-gray-200 p-2 text-right">
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
           {isLoading ? <LoadingComponent /> : dolarBlueVenta}
         </div>
-        <div className="bg-gray-200 p-2">Data 3</div>
-        <div className="bg-gray-200 p-2 text-right">5</div>
-        <div className="bg-gray-200 p-2 text-right">6</div>
-        <div className="bg-gray-200 p-2">Data 4</div>
-        <div className="bg-gray-200 p-2 text-right">7</div>
-        <div className="bg-gray-200 p-2 text-right">8</div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-semibold tracking-tight text-sm hover:bg-gray-800 transition duration-300 ease-in-out hover:text-white">
+          <Link href="/dolarbolsa/compra">
+            {isLoading ? <LoadingComponent /> : dolarBolsaNombre}
+          </Link>
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
+          {isLoading ? <LoadingComponent /> : dolarBolsaCompra}
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
+          {isLoading ? <LoadingComponent /> : dolarBolsaVenta}
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-semibold tracking-tight text-sm hover:bg-gray-800 transition duration-300 ease-in-out hover:text-white">
+          {isLoading ? <LoadingComponent /> : dolarCCLNombre}
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
+          {isLoading ? <LoadingComponent /> : dolarCCLCompra}
+        </div>
+        <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
+          {isLoading ? <LoadingComponent /> : dolarCCLVenta}
+        </div>
       </div>
     </div>
   );

@@ -28,14 +28,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`{raleway.className} flex flex-col min-h-screen `}>
+      <body className={`{raleway.className}`}>
         <Navbar />
-        <h1 className="text-center text-6xl text-bold p-5">
-          Ultima Cotización del dolar
-        </h1>
-        <IndexPage />
-        {children}
+        <div className="min-h-screen flex flex-col">
+          <main className="flx-grow">{children}</main>
+        </div>
         <Footer />
+
+        {/* SCRIPT */}
         <script
           type="module"
           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

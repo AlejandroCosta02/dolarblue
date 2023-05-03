@@ -33,7 +33,6 @@ export const dolar_blue_nombre = async (): Promise<string> => {
 
   return dolar_blue_nombre;
 };
-
 export const dolar_blue_venta = async (): Promise<string> => {
   const data = await getApiData();
 
@@ -78,4 +77,74 @@ export const dolar_oficial_nombre = async (): Promise<string> => {
   }
 
   return dolar_oficial_nombre;
+};
+// DOLAR BOLSA
+export const dolar_bolsa_compra = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_bolsa_compra = data[4]?.casa?.compra;
+
+  if (!dolar_bolsa_compra) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+
+  const rounded_dolar_bolsa_compra = parseFloat(dolar_bolsa_compra).toFixed(2);
+
+  return rounded_dolar_bolsa_compra;
+};
+export const dolar_bolsa_venta = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_bolsa_venta = data[4]?.casa?.venta;
+
+  if (!dolar_bolsa_compra) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+  const rounded_dolar_bolsa_venta = parseFloat(dolar_bolsa_venta).toFixed(2);
+  return rounded_dolar_bolsa_venta;
+};
+export const dolar_bolsa_nombre = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_bolsa_nombre = data[4]?.casa?.nombre;
+
+  if (!dolar_bolsa_compra) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+
+  return dolar_bolsa_nombre;
+};
+// DOLAR CCL
+export const dolar_ccl_nombre = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_ccl_nombre = data[3]?.casa?.nombre;
+
+  if (!dolar_ccl_nombre) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+
+  return dolar_ccl_nombre;
+};
+export const dolar_ccl_compra = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_ccl_compra = data[3]?.casa?.compra;
+
+  if (!dolar_ccl_compra) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+
+  return dolar_ccl_compra;
+};
+export const dolar_ccl_venta = async (): Promise<string> => {
+  const data = await getApiData();
+
+  const dolar_ccl_venta = data[3]?.casa?.venta;
+
+  if (!dolar_ccl_venta) {
+    throw new Error("Unable to fetch casa venta data from API");
+  }
+
+  return dolar_ccl_venta;
 };
