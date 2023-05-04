@@ -34,9 +34,12 @@ const Navbar: React.ForwardRefExoticComponent<NavbarProps> = React.forwardRef(
             </Link>
           </li>
           <li className="py-2 border-b border-gray-200">
-            <a href="#" className="text-white font-bold block">
+            <Link
+              href="/dolarbolsa/compra"
+              className="text-white font-bold block"
+            >
               Dolar Bolsa
-            </a>
+            </Link>
           </li>
           <li className="py-2 border-b border-gray-200">
             <a href="#" className="text-white font-bold block">
