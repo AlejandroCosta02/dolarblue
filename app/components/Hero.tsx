@@ -1,8 +1,5 @@
 "use client";
-import SpanWithAnimatedWord from "./SpanComponent";
 import ChangingWord from "./SpanComponent";
-import FadingSpan from "./SpanComponent";
-import TypingAnimation from "./SpanComponent";
 
 function Hero() {
   return (

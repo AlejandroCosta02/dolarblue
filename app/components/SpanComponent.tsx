@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const colors = ["oficial", "blue", "bolsa", "CCL"];
+const colors = ["OFICIAL", "BLUE", "BOLSA", "CCL"];
 
 const ChangingWord = () => {
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
@@ -17,7 +17,7 @@ const ChangingWord = () => {
 
   const currentColor = colors[currentColorIndex];
   const sentence = (
-    <span className="text-white">Todos los valores actualizados del </span>
+    <span className="text-white">Todas las cotizaciones actualizadas de </span>
   );
 
   return (
@@ -32,7 +32,7 @@ const ChangingWord = () => {
         {sentence}
         <br />
         <motion.span
-          className="inline-block mx-2 text-green-200"
+          className="inline-block text-green-200 text-5xl"
           key={currentColor}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

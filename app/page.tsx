@@ -1,5 +1,3 @@
-import NavDolar from "./components/NavDolar";
-import Conversion_2 from "./components/Conversion_2";
 import { dolar_blue_venta } from "./components/NewApi";
 import Table from "./components/Table/Table";
 import Hero from "./components/Hero";

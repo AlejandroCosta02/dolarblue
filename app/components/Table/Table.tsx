@@ -123,7 +123,9 @@ const Table: React.FC = () => {
           {isLoading ? <LoadingComponent /> : dolarBolsaVenta}
         </div>
         <div className="px-6 py-4 bg-white text-gray-700 font-semibold tracking-tight text-sm hover:bg-gray-800 transition duration-300 ease-in-out hover:text-white">
-          {isLoading ? <LoadingComponent /> : dolarCCLNombre}
+          <Link href="/dolarccl/compra">
+            {isLoading ? <LoadingComponent /> : dolarCCLNombre}
+          </Link>
         </div>
         <div className="px-6 py-4 bg-white text-gray-700 font-normal tracking-tight text-sm">
           {isLoading ? <LoadingComponent /> : dolarCCLCompra}
