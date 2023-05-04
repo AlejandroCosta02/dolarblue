@@ -28,7 +28,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-auto">
+    <div className="flex flex-col h-auto mx-auto items-center pt-3">
       <RedButton onClick={handleButtonClick} />
       <Navbar navRef={navRef} isOpen={isOpen} />
     </div>

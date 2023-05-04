@@ -1,6 +1,7 @@
 import Conversion_2 from "@/app/components/Conversion_2";
 import NavDolar from "@/app/components/NavDolar";
 import { dolar_blue_venta, dolar_blue_nombre } from "@/app/components/NewApi";
+import IndexPage from "@/app/components/sideNavBar/IndexPage";
 
 // const getDolar = async () => {
 //   const res = await fetch("https://api.bluelytics.com.ar/v2/latest");
@@ -25,6 +26,7 @@ async function DB_Venta() {
         <h3 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl text-center">
           {dolarblue_nombre}
         </h3>
+        <IndexPage />
       </div>
       <p className="text-center text-5xl text-bold my-11">${dolarblue_venta}</p>
       <NavDolar href={path} href_1={path_1} />

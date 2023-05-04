@@ -49,7 +49,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
             </div>
           </div>
           {/* EXCHANGE BUTTON */}
-          <div className=" flex flex-row space-x-10 mt-5">
+          <div className=" flex flex-row space-x-10 my-5">
             <button
               onClick={arrowButton}
               className={`${
@@ -99,7 +99,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
             </div>
           </div>
           {/* EXCHANGE BUTTON */}
-          <div className=" flex flex-row space-x-10 mt-5">
+          <div className=" flex flex-row space-x-10 my-5">
             <button
               onClick={arrowButton}
               className={`${
@@ -114,7 +114,7 @@ function Conversion_2({ dolarblue }: { dolarblue: number }) {
             <input
               type="text"
               name="hs-input-with-leading-and-trailing-icon"
-              className="w-3/4 py-3 px-4 pl-9 shadow-sm rounded-sm text-3xl font-thin border-b-4 outline-0 border-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="w-3/4 py-3 px-4 pl-9 shadow-sm rounded-sm text-3xl font-bold border-b-4 outline-0 border-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               placeholder=""
               value={result ? result.toFixed(2) : "0.00"}
               readOnly

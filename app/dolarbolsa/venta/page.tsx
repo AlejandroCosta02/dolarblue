@@ -1,6 +1,7 @@
 import Conversion_2 from "@/app/components/Conversion_2";
 import NavDolar from "@/app/components/NavDolar";
 import { dolar_bolsa_venta, dolar_bolsa_nombre } from "@/app/components/NewApi";
+import IndexPage from "@/app/components/sideNavBar/IndexPage";
 
 async function BB_Venta() {
   const dolarBolsa_venta = await dolar_bolsa_venta();
@@ -14,6 +15,7 @@ async function BB_Venta() {
         <h3 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl text-center">
           {dolarBolsa_nombre}
         </h3>
+        <IndexPage />
       </div>
       <p className="text-center text-5xl text-bold my-11">
         ${dolarBolsa_venta}

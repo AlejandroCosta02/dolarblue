@@ -4,6 +4,7 @@ import {
   dolar_oficial_venta,
   dolar_oficial_nombre,
 } from "@/app/components/NewApi";
+import IndexPage from "@/app/components/sideNavBar/IndexPage";
 
 async function dolarOficialVenta() {
   const dolaroficial_venta = await dolar_oficial_venta();
@@ -17,6 +18,7 @@ async function dolarOficialVenta() {
         <h3 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl text-center">
           {dolaroficial_nombre}
         </h3>
+        <IndexPage />
       </div>
       <p className="text-center text-5xl text-bold my-11">
         ${dolaroficial_venta}
