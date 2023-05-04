@@ -6,6 +6,7 @@ interface Post {
   title: string;
   imgSrc: string;
   description: string;
+  slug: string;
 }
 function Blog() {
   return (
@@ -18,6 +19,7 @@ function Blog() {
             title={post.title}
             imgSrc={post.imgSrc}
             description={post.description}
+            slug={post.title}
           />
         ))}
       </div>
