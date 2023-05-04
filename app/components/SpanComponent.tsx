@@ -30,6 +30,7 @@ const ChangingWord = () => {
         transition={{ duration: 0.8 }}
       >
         {sentence}
+        <br />
         <motion.span
           className="inline-block mx-2 text-green-200"
           key={currentColor}
