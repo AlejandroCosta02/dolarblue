@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import ChangingWord from "./SpanComponent";
 
 function Hero() {
@@ -16,12 +17,12 @@ function Hero() {
 
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow">
-              <a
-                href="#"
+              <Link
+                href="/blog"
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
               >
                 Como comprar Dolares
-              </a>
+              </Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <a
