@@ -1,26 +1,36 @@
 import EachPost from "./components/EachPost";
 import HeroBlog from "./components/HeroBlog";
-import { posts } from "./posts.json";
-interface Post {
+import { PrismaClient, Post } from "@prisma/client";
+
+export interface PostPropType {
   id: number;
   title: string;
-  imgSrc: string;
   description: string;
+  image: string;
   slug: string;
 }
-function Blog() {
+const prisma = new PrismaClient();
+
+const fetchData = async (): Promise<PostPropType[]> => {
+  const post = await prisma.post.findMany({
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      image: true,
+      slug: true,
+    },
+  });
+  return post;
+};
+async function Blog() {
+  const post = await fetchData();
   return (
     <>
       <HeroBlog />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-12">
-        {posts.map((post) => (
-          <EachPost
-            key={post.id}
-            title={post.title}
-            imgSrc={post.imgSrc}
-            description={post.description}
-            slug={post.title}
-          />
+        {post.map((post) => (
+          <EachPost post={post} />
         ))}
       </div>
       {/* <EachPost /> */}

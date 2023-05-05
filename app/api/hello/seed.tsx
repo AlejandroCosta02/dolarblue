@@ -20,7 +20,7 @@ export async function GET(req: NextApiRequest, res: NextApiResponse<Post>) {
         description:
           "like readable English. Many desktop publishing packages and web page editors now use Lorem",
         body: "body of the post",
-        slug: "/post1",
+        slug: "post-1",
       },
       {
         image:
@@ -29,7 +29,7 @@ export async function GET(req: NextApiRequest, res: NextApiResponse<Post>) {
         description:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ",
         body: "body of the post",
-        slug: "/post2",
+        slug: "post-2",
       },
     ],
   });
